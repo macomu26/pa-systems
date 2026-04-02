@@ -307,7 +307,6 @@ function Navbar() {
 
   const links = [
     { label: "Servicios",  href: "#servicios" },
-    { label: "Fundador",   href: "#fundador" },
     { label: "Contacto",   href: "#contacto" },
   ];
 
@@ -572,90 +571,6 @@ function ValueBand() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// FOUNDER
-// ─────────────────────────────────────────────────────────────────────────────
-function Founder() {
-  const traits = [
-    { icon: <Zap size={15} />, title: "Estrategia Digital", desc: "Diseña ecosistemas completos, no soluciones aisladas." },
-    { icon: <Globe size={15} />, title: "Visión PYME", desc: "Democratiza herramientas de nivel enterprise para negocios reales." },
-    { icon: <TrendingUp size={15} />, title: "Resultados medibles", desc: "Cada proyecto tiene métricas claras de éxito desde el día uno." },
-    { icon: <Shield size={15} />, title: "Confianza primero", desc: "Relaciones a largo plazo basadas en transparencia y entrega." },
-  ];
-
-  return (
-    <section id="fundador" style={{ padding: "100px 24px", background: "var(--bg-2)" }}>
-      <div style={{ maxWidth: 1160, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 48, alignItems: "start" }}>
-          {/* Left — bio */}
-          <div>
-            <Reveal>
-              <p className="eyebrow" style={{ marginBottom: 16 }}>El fundador</p>
-            </Reveal>
-            <Reveal delay={80}>
-              {/* Avatar + name */}
-              <div style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 28 }}>
-                <div className="founder-avatar">M</div>
-                <div>
-                  <p style={{ fontFamily: "var(--font)", fontWeight: 700, fontSize: "1.25rem", letterSpacing: "-0.03em", color: "var(--text)" }}>Mayron Cordero</p>
-                  <p style={{ fontSize: 13, color: "var(--accent-2)", marginTop: 2 }}>Fundador & Estratega Digital</p>
-                  <div style={{ display: "flex", gap: 4, marginTop: 6 }}>
-                    {[...Array(5)].map((_, i) => <Star key={i} size={11} fill="currentColor" style={{ color: "#f59e0b" }} />)}
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delay={150}>
-              <p style={{ fontSize: 15, color: "var(--text-2)", lineHeight: 1.8, marginBottom: 20 }}>
-                Mayron Cordero es el estratega detrás de <strong style={{ color: "var(--text)", fontWeight: 600 }}>PA Systems</strong>, 
-                una agencia nacida de una convicción clara: las PYMES merecen acceso a la misma tecnología que usan 
-                las grandes corporaciones.
-              </p>
-            </Reveal>
-            <Reveal delay={200}>
-              <p style={{ fontSize: 15, color: "var(--text-2)", lineHeight: 1.8, marginBottom: 28 }}>
-                Con experiencia en desarrollo web, automatización y marketing digital, diseña ecosistemas 
-                que trabajan de forma autónoma — liberando a los emprendedores para que se concentren en 
-                lo que realmente importa: hacer crecer su negocio.
-              </p>
-            </Reveal>
-            <Reveal delay={240}>
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ fontSize: 13 }}>
-                  <Phone size={13} /> Agendar llamada
-                </a>
-                <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ fontSize: 13 }}>
-          
-                </a>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Right — traits */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-            {traits.map((t, i) => (
-              <Reveal key={t.title} delay={i * 70}>
-                <div style={{ display: "flex", gap: 14, padding: "18px 20px", background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 14, transition: "border-color 0.2s" }}
-                  onMouseEnter={e => (e.currentTarget.style.borderColor = "var(--border-h)")}
-                  onMouseLeave={e => (e.currentTarget.style.borderColor = "var(--border)")}
-                >
-                  <div style={{ width: 34, height: 34, borderRadius: 9, background: "rgba(59,130,246,0.1)", border: "1px solid rgba(59,130,246,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--accent-2)", flexShrink: 0, marginTop: 2 }}>
-                    {t.icon}
-                  </div>
-                  <div>
-                    <p style={{ fontWeight: 600, fontSize: 14, color: "var(--text)", marginBottom: 3, letterSpacing: "-0.01em" }}>{t.title}</p>
-                    <p style={{ fontSize: 13, color: "var(--text-2)", lineHeight: 1.6 }}>{t.desc}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
 // CONTACT FORM (Formspree-compatible)
 // ─────────────────────────────────────────────────────────────────────────────
 type FormState = "idle" | "loading" | "success" | "error";
@@ -885,7 +800,7 @@ function Footer() {
 
         {/* Bottom row */}
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12, marginTop: 24, fontSize: 12, color: "var(--text-3)" }}>
-          <p>© {new Date().getFullYear()} PA .Systems. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} PA Systems. Todos los derechos reservados.</p>
           <p>Diseñado y desarrollado con ❤️ en Costa Rica.</p>
         </div>
       </div>
@@ -905,7 +820,7 @@ export default function Page() {
         <Hero />
         <Services />
         <ValueBand />
-        <Founder />
+
         <ContactForm />
       </main>
       <Footer />
