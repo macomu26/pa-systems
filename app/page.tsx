@@ -34,7 +34,7 @@ const CONTACT = {
   instagramHandle: "@pa_systems",
   whatsapp: "https://wa.me/50687308867",
   // Replace this with your actual Formspree endpoint: https://formspree.io/f/YOUR_ID
-  formspree: "https://formspree.io/f/xpwzgvnk",
+  formspree: "https://formspree.io/f/xzdkjrzz",
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
